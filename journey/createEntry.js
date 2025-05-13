@@ -53,7 +53,7 @@ export function createNewEntry() {
     document.getElementById('entriesContainer').appendChild(container);
 }
 
-const newEntry = document.getElementById('startJourney')
+const newEntry = document.getElementById('newEntry-save-button')
 newEntry.addEventListener('click',function(){
     createNewEntry()
 })
