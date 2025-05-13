@@ -12,21 +12,28 @@
     <body>
         <div class="pageContainer">
             <div class="globalPadding">
-                <div class="startJourneyContainer">
+                <div class="startJourneyContainer" id="startJourneyContainer">
                     <div class="startJourneyPadding">
-                        <button class="startJourney">Start Journey</button>
+                        <button id="startJourney">New Entry</button>
+                        <div id="newEntryModal" class="newEntryModal">
+                            <div class="modalContent">
+                                <span class="close" id="closeModalBtn">&times;</span>
+                                <!--FORM CONTENT-->
+                                <form id="newEntryForm">
+                                    <label for="entry">What did you try today, and what did you learn from it?</label>
+                                    <input type="text" id="entry" name="entry">
+                                    <button type = "submit">Save</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="entryContainer">
-                    <button class="collapsibleEntry">Day [X] [Date]</button>
-                    <div class="collapsibleContent">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam incidunt error beatae quam reiciendis at consequuntur suscipit et, porro placeat officiis possimus corporis eveniet a expedita fuga ullam vitae sequi.
-                        </p>
-                    </div>
+                <div id="entriesContainer">
+
                 </div>
             </div>
         </div>
-        <script type="module" src="/journey/journey.js"></script>
+        <script type="module" src="/journey/journeyController.js"></script>
+        <script type="module" src="/journey/createEntry.js"></script>
     </body>
 </html>
