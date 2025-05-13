@@ -1,0 +1,120 @@
+/* Global CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+    font: bold;
+    overflow-y: scroll;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: #444;
+    line-height: 1.9;
+    background-color: #FAFAFA;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Global Page Padding */
+.globalPadding {
+    padding: 0 24px 0 24px;
+}
+
+.smallSectionPadding {
+    padding: 40px 0 40px 0;
+}
+
+.mediumSectionPadding {
+    padding: 80px 0 80px 0;
+}
+
+.largeSectionPaddion {
+    padding: 120px 0 120px 0;
+}
+
+.xlargeSectionPadding {
+    padding: 160px 0 160px 0;
+}
+
+.xxlargeSectionPadding {
+    padding: 200px 0 200px 0;
+}
+
+.xxxlargeSectionPadding {
+    padding: 240px 0 240px 0;
+}
+
+/* Start Journey Button */
+.startJourneyContainer {
+    text-align: center;
+}
+
+.startJourneyPadding {
+    padding: 80px 0 80px 0
+}
+
+.startJourney {
+    background-color: #F87171;
+    border: none;
+    border-radius: 16px;
+    color: white;
+    cursor: pointer;
+    font-size: 28px;
+    padding: 4px 8px 4px 8px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.startJourney:hover {
+    background-color: #B84C4C;
+}
+
+/* Journey Entry Container */
+.entryContainer {
+    border: none;
+    border-radius: 4px;
+    outline: #D1D5DB;
+}
+
+.active,
+.collapsibleEntry {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.collapsibleEntry:hover {
+    background-color: #555;
+}
+
+.collapsibleEntry:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.collapsibleContent {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}
