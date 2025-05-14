@@ -11,7 +11,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
         // Identify Open Button
         openBtnId: "startJourney",
         // Identify Close Button
-        closeBtnId: "closeModalBtn"
+        closeBtnId: "closeModalBtn",
+        // Identify Submit Button
+        submitBtnId: "newEntry-save-button"
     })
 })
 

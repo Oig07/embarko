@@ -1,5 +1,4 @@
 "use strict";
-
 // Create Entry Function
 let entryCount = 0;
 let lastEntryDate = ''; // Track previous entry
@@ -31,7 +30,7 @@ export function createNewEntry() {
     content.className = 'collapsibleContent';
 
     const paragraph = document.createElement('p');
-    paragraph.textContent = 'This is your new journal entry.This is your new journal entry.This is your new journal entry.This is your new journal entry.This is your new journal entry.This is your new journal entry.This is your new journal entry.';
+    paragraph.textContent = document.getElementById('entry').value;
     content.appendChild(paragraph);
 
     // Add collapsible toggle behavior
@@ -53,7 +52,11 @@ export function createNewEntry() {
     document.getElementById('entriesContainer').appendChild(container);
 }
 
+// Create New Entry by clicking "Add Entry" in Modal
 const newEntry = document.getElementById('newEntry-save-button')
-newEntry.addEventListener('click',function(){
+newEntry.addEventListener('click',function(e){
+    e.preventDefault(); // Prevent form from reloading page
+    const form = document.getElementById('newEntryForm')
     createNewEntry()
+    form.reset(); // Clear form after submission
 })
