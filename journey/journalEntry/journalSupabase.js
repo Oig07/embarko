@@ -1,10 +1,9 @@
 "use strict";
 // Import Supabase client
 import {createClient} from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+import { SUPABASE_URL, SUPABASE_KEY } from '../config.js';
 
-const supabaseUrl = 'https://uikfquugekdemngynboy.supabase.co'
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVpa2ZxdXVnZWtkZW1uZ3luYm95Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyNjkwNzgsImV4cCI6MjA2Mjg0NTA3OH0.SRFzFZMVIUBHMD20JAhGgxHNlxNSXUR3oj4OEGaQAMU'
-const supabase = createClient(supabaseUrl,supabaseKey)
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
 
 
 export async function saveJournalEntry(content){
