@@ -1,18 +1,20 @@
 "use strict";
+// Import function to create new entry elements and modal control logic
+import { initModal } from "./journalEntry/modalControl.js";
 
-import { createNewEntry } from "./createEntry.js";
-import { initModal } from "./openEntryModal.js";
+// Wait for the startJourney button to appear in the DOM before initializing modal
+function waitForElement(id, callback) {
+  const el = document.getElementById(id);
+  if (el) return callback(el);
+  setTimeout(() => waitForElement(id, callback), 100);
+}
 
-// Modal Open Close
-document.addEventListener("DOMContentLoaded", ()=>{
-    initModal({
-        // Identify Modal Content
-        modalId: "newEntryModal",
-        // Identify Open Button
-        openBtnId: "startJourney",
-        // Identify Close Button
-        closeBtnId: "closeModalBtn",
-        // Identify Submit Button
-        submitBtnId: "newEntry-save-button"
-    })
-})
+waitForElement("startJourney", () => {
+  console.log("startJourney now exists. Initializing modal...");
+  initModal({
+    modalId: "newEntryModal",
+    openBtnId: "startJourney",
+    closeBtnId: "closeModalBtn",
+    submitBtnId: "newEntry-save-button"
+  });
+});
