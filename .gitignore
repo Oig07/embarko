@@ -1,0 +1,36 @@
+# === ENVIRONMENT VARIABLES ===
+.env
+.env.local
+.env.development
+.env.production
+
+# === LOCAL CONFIG FILES (e.g., keys not meant for Git) ===
+config.js
+journey/journalEntry/config.js
+
+# === DEPENDENCIES ===
+node_modules/
+
+# === BUILD ARTIFACTS ===
+dist/
+.vite/
+build/
+.cache/
+*.log
+
+# === SYSTEM FILES ===
+.DS_Store
+Thumbs.db
+
+# === IDE SETTINGS ===
+.vscode/
+.idea/
+
+# === SUPABASE AUTO EXPORTS (optional if using CLI) ===
+supabase/.temp/
+supabase/migrations/
+
+# === LOGS ===
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
