@@ -62,7 +62,7 @@ body {
     padding: 240px 0 240px 0;
 }
 
-/* Start Journey Button */
+/* New Entry Button */
 .startJourneyContainer {
     text-align: center;
 }
@@ -71,7 +71,7 @@ body {
     padding: 80px 0 80px 0
 }
 
-#startJourney {
+.startJourney {
     background-color: #F87171;
     border: none;
     border-radius: 16px;
@@ -83,7 +83,7 @@ body {
     transition: 0.5s;
 }
 
-#startJourney:hover {
+.startJourney:hover {
     background-color: #B84C4C;
 }
 
@@ -92,7 +92,6 @@ body {
     padding: 8px 384px 8px 384px
 }
 
-.active,
 .collapsibleEntry {
     background-color: #FAFAFA;
     color: #333333;
@@ -103,14 +102,13 @@ body {
     border-radius: 8px;
     text-align: left;
     outline: #D6D3D1;
-    font-size: 15px;
 }
 
 .collapsibleEntry:hover {
-    background-color: #D6D3D1;
+    background-color: #EFEFEF;
 }
 
-.collapsibleEntry:after {
+.collapsibleEntry::after {
     content: '\002B';
     color: #333333;
     font-weight: bold;
@@ -118,21 +116,38 @@ body {
     margin-left: 5px;
 }
 
-.active:after {
+.collapsibleEntry.active:after {
     content: "\2212";
 }
 
 .collapsibleContent {
-    display: none;
-    padding: 0 18px;
+    max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
-    background-color: #E5E7EB;
+    background-color: #F7E6C4;
+    border: 1px solid #E0E0E0;
     clip-path: inset(-5px);
-    border-radius: 4px;
+    border-radius: 0 0 4px 4px;
+    font-size: 16px;
+    font-weight: 400;
+    word-wrap: break-word;
+    padding: 0 16px;
+    width: 99%;
+    margin: 0 auto;
 }
 
-/* CREATE NEW ENTRY MODAL*/
+.collapsibleContent p {
+    color: #333;
+    /* Visible text */
+}
+
+/* Optional extra padding when open */
+.collapsibleEntry.active+.collapsibleContent {
+    padding: 12px 16px;
+}
+
+
+/* NEW ENTRY MODAL*/
 .newEntryModal {
     display: flex;
     align-items: center;
@@ -213,7 +228,7 @@ body {
     font-size: 16px;
     padding: 4px 8px 4px 8px;
     text-decoration: none;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 #newEntry-save-button:hover {
@@ -223,4 +238,11 @@ body {
 li {
     display: inline-block;
     margin-right: 15px;
+}
+
+textarea {
+    resize: vertical;
+    max-height: 500px;
+    min-height: 150px;
+    overflow-y: auto;
 }

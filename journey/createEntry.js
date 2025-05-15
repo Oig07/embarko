@@ -14,6 +14,7 @@ export function createNewEntry() {
     // Create container
     const container = document.createElement('div');
     container.className = 'journeyEntryContainer';
+    container.id = 'journeyEntryContainer'
 
     // Create inner padding div
     const entryPadding = document.createElement('div');
@@ -24,24 +25,30 @@ export function createNewEntry() {
     button.className = 'collapsibleEntry';
     const date = new Date().toLocaleDateString();
     button.textContent = `Day ${entryCount} - ${date}`;
+    button.style.fontSize = '24px';
+    button.style.fontWeight = '400';
+    button.style.color = '#333';
 
     // Create the content div
     const content = document.createElement('div');
     content.className = 'collapsibleContent';
 
     const paragraph = document.createElement('p');
-    paragraph.textContent = document.getElementById('entry').value;
+    paragraph.textContent = document.getElementById('entry').value || 'Nothing Added';
     content.appendChild(paragraph);
 
     // Add collapsible toggle behavior
     button.addEventListener('click', function () {
-        // Toggle display between block and none
-        if (content.style.display === 'block') {
-            content.style.display = 'none';
+        // Toggle active class on the button to trigger ::after CSS
+        this.classList.toggle('active');
+    
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
         } else {
-            content.style.display = 'block';
+            content.style.maxHeight = content.scrollHeight + 'px';
         }
     });
+    
 
     // Assemble
     entryPadding.appendChild(button);

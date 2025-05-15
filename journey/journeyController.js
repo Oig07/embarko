@@ -16,4 +16,3 @@ document.addEventListener("DOMContentLoaded", ()=>{
         submitBtnId: "newEntry-save-button"
     })
 })
-
