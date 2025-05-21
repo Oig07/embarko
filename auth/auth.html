@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="\auth\auth.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+        <title>Embarko - Log In or Sign Up</title>
+    </head>
+    <body>
+        <div class="globalPadding">
+            <div class="welcomeMessage" id="welcomeMessage">
+                <h1>
+                    Welcome
+                </h1>
+            </div>
+            <div class= "authSwitch-container">
+                <div class="authSwitch-background">
+                    <div class="selectorSlider"></div>
+                    <div class="selectorContainer">
+                        <button class="loginCard-selector active">Login</button>
+                        <button class="signUpCard-selector">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        <div class="shmediumDivPadding"></div>
+        <div class="formContainer">
+             <!-- LOGIN DISPLAY-->
+            <div class="loginCard-container" id="loginCard-container">
+                <div class="loginCard" id="loginCard">
+                    <span class="loginPrompt-help">
+                        <div class="loginPrompt" id="loginPrompt">
+                            <h2>Login</h2>
+                        </div>
+                        <small id="loginPromptHelpBlock" class="loginPromptHelpBlock">Welcome Back!</small>
+                    </span>
+            <!-- LOGIN FORM -->
+                    <form>
+                        <div class="mediumDivPadding">
+                            <div class="loginInfo-container">
+                                <label for="username" id="usernameLabel" class="usernameLabel">Email</label><br>
+                                <input type="email" id="username" class="username" placeholder="user@example.com">
+                                <br>
+                                <label for="password" id="passwordLabel" class="passwordLabel">Password</label>
+                                <br>
+                                <input type="password" id="password" class="password" placeholder="Enter password"><br>
+                            </div>
+                            <div class="shmediumDivPadding"></div>
+                            <div class="loginBtn-container">
+                                <button type="submit" class="loginBtn" id="loginBtn">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- SIGN UP DISPLAY-->
+            <div class="signUpCard-container" id="signUpCard-container">
+                <div class="signUpCard" id="signUpCard">
+                    <span class="signUpPrompt-help">
+                        <div class="signUpPrompt" id="signUpPrompt">
+                            <h2>Sign Up</h2>
+                        </div>
+                        <small id="signUpPromptHelpBlock" class="signUpPromptHelpBlock">Create an account here!</small>
+                    </span>
+            <!-- SIGN UP FORM -->
+                    <form>
+                        <div class="mediumDivPadding">
+                            <div class="signUpInfo-container">
+                                <label for="username" id="usernameLabel" class="usernameLabel">Email</label><br>
+                                <input type="email" id="username" class="username" placeholder="user@example.com">
+                                <br>
+                                <label for="password" id="passwordLabel" class="passwordLabel">Password</label>
+                                <br>
+                                <input type="password" id="password" class="password" placeholder="Enter password"><br>
+                            </div>
+                            <div class="shmediumDivPadding"></div>
+                            <div class="signUpBtn-container">
+                                <button type="submit" class="signUpBtn" id="signUpBtn">Sign Up</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> 
+        </div>
+        <script type="module" src="./main.js"></script>
+        <script type="module" src="./authSwitch.js"></script>
+    </body>
+</html>

@@ -1,0 +1,251 @@
+/* Global CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+    font: bold;
+    overflow-y: scroll;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: #444;
+    line-height: 1.9;
+    background-color: #FAFAFA;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Global Page Padding */
+.globalPadding {
+    padding: 0 24px 0 24px;
+}
+
+.smallDivPadding {
+    padding: 8px 0 8px 0;
+}
+
+.shmediumDivPadding {
+    padding: 12px 0 12px 0;
+}
+
+.mediumDivPadding {
+    padding: 16px 0 16px 0;
+}
+
+.largeDivPadding {
+    padding: 24px 0 24px 0;
+}
+
+.smallSectionPadding {
+    padding: 40px 0 40px 0;
+}
+
+.mediumSectionPadding {
+    padding: 80px 0 80px 0;
+}
+
+.largeSectionPaddion {
+    padding: 120px 0 120px 0;
+}
+
+.xlargeSectionPadding {
+    padding: 160px 0 160px 0;
+}
+
+.xxlargeSectionPadding {
+    padding: 200px 0 200px 0;
+}
+
+.xxxlargeSectionPadding {
+    padding: 240px 0 240px 0;
+}
+
+/* AUTH SWITCH CONTAINER */
+.authSwitch-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.authSwitch-background {
+    border-radius: 8px;
+    height: 48px;
+    width: 22%;
+    background-color: #dfdddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 4px;
+    /* Ensures .selectorSlider aligns evenly */
+}
+
+.selectorContainer {
+    display: flex;
+    gap: 2px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.loginCard-selector,
+.signUpCard-selector {
+    width: 47%;
+    background-color: #FAFAFA;
+    border: none;
+    color: #444;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 8px 4px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectorSlider {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 48%;
+    height: 40px;
+    background-color: #FAFAFA;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    z-index: 0;
+}
+
+.selectorContainer button {
+    z-index: 1;
+    position: relative;
+    background-color: transparent;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.selectorContainer button.active {
+    color: #df6666;
+    opacity: 1;
+}
+
+.selectorContainer button:not(.active) {
+    opacity: 0.6;
+}
+
+.loginCard-container.active,
+.signUpCard-container.active {
+    display: block;
+}
+
+/* WELCOME MESSAGE */
+.welcomeMessage {
+    padding: 184px 0 24px 0;
+    text-align: center;
+}
+
+/* LOGIN CARD */
+.loginCard-container,
+.signUpCard-container {
+    justify-items: center;
+    display: none;
+}
+
+.loginCard-container.active,
+.signUpCard-container.active {
+    display: block;
+}
+
+.loginCard,
+.signUpCard {
+    outline: 2.8px solid #d7d5d5;
+    transition: 0.3s;
+    width: 20%;
+    border-radius: 8px;
+    padding: 8px 0 0 0;
+}
+
+loginCard:hover,
+.signUpCard:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* FORM PROMPT */
+.loginPrompt,
+.signUpPrompt {
+    padding-left: 16px;
+    font-weight: bolder;
+}
+
+.loginPromptHelpBlock,
+.signUpPromptHelpBlock {
+    padding-left: 16px;
+    margin-top: -8px;
+    display: block;
+    color: #a0a0a0;
+    font-weight: 500;
+}
+
+/* FORM INFO */
+.loginInfo-container,
+.signUpInfo-container {
+    text-align: left;
+    padding-left: 16px
+}
+
+input {
+    padding: 4px 8px;
+    margin: 4px 0;
+}
+
+input:focus {
+    transition: 0.05s;
+    outline: 2.8px solid #df6666;
+}
+
+.username,
+.password {
+    background-color: #FAFAFA;
+    border-color: #efeded;
+    border-width: 0.04cap;
+    border-radius: 4px;
+    width: 95%;
+    font-size: 14px;
+}
+
+.usernameLabel,
+.passwordLabel {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+/* FORM BUTTON */
+.loginBtn-container,
+.signUpBtn-container {
+    text-align: center;
+}
+
+.loginBtn,
+.signUpBtn {
+    background-color: #df6666;
+    border: none;
+    color: #FAFAFA;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 8px 4px 8px 4px;
+    width: 90%;
+}
+
+.loginBtn:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
