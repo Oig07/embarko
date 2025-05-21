@@ -1,6 +1,6 @@
 "use strict"
 
-let dropdown = document.getElementsByClassName('journeyCollapse')
+let dropdown = document.getElementsByClassName('journeyCollapse-Btn')
 let i;
 
 export function sidebarCollapse(){

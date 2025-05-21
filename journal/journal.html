@@ -15,8 +15,8 @@
             <div class="mainLayout">
         <div class="sidebarContainer" id="sidebarContainer">
             <div class="sidebar" id="sidebar">
-                <a>Home</a>
-                <button class="journeyCollapse">Journeys <i class="fa-solid fa-chevron-down chevron"></i>
+                <button class="startJourney-Btn" id="startJourney-Btn">Start New Journey</button>
+                <button class="journeyCollapse-Btn">Journeys <i class="fa-solid fa-chevron-down chevron"></i>
                 </button>
                 <div class="journeys-container">
                     <a>Journey 1</a>
@@ -26,9 +26,26 @@
                 <a>Settings</a>
             </div>
         </div>
-        <div class="journal-iframe">
+        <!-- <div class="journal-iframe">
             <iframe src="/journey/journey.html" title="journal 1"></iframe>
+        </div> -->
         </div>
+        <div class="newJourney-Modal active" id="newJourney-Modal">
+            <div class="modalContent" id="modalContent">
+                <div class="modalHeader">
+                    <h2>What Journey Are You Starting Today?</h2>
+                    <span class="close" id="closeModalBtn">&times;</span>
+                </div>
+                <!-- FORM CONTENT -->
+                 <form id="newJourney-Form" class="newJourney-Form">
+                    <label for="entry">Journey Name</label>
+                        <input type="text" id="journeyName" name="entry">
+                 </form>
+                 <div class="smallDivPadding"></div>
+                 <button type="submit" id="newJourney-save-Btn" class="newJourney-save-Btn">
+                    Create Journal
+                 </button>
+            </div>
         </div>
         </div>
         <script type="module" src="./main.js"></script>
