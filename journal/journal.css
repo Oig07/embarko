@@ -194,7 +194,7 @@ body {
 
 .modalContent {
     background-color: white;
-    padding: 36px;
+    padding: 24px;
     border-radius: 8px;
     max-width: 600px;
     width: 90%;
@@ -205,13 +205,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
     /* optional spacing */
 }
 
 .modalHeader h2 {
-    margin: 0;
     font-size: 1.25rem;
+    margin-top: -24px;
 }
 
 .modalHeader .close {
@@ -228,15 +227,34 @@ body {
     cursor: pointer;
 }
 
-#entry {
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+.journeyName {
     display: flex;
     flex-direction: column;
-    gap: 16px;
     max-width: 750px;
-    padding: 24px;
     width: 100%;
+    line-height: 8;
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    background: transparent;
+    font: "lato", sans-serif;
+    font-size: 16px;
+    resize: none;
+}
+
+.journeyName:focus {
+    border-bottom: 2px solid #F87171;
+}
+
+.entry-label {
+    font-weight: bold;
+    margin-top: -60px;
+}
+
+.entry-help {
+    display: block;
+    margin-top: -4px;
 }
 
 .newJourney-save-Btn {
@@ -251,7 +269,7 @@ body {
     transition: 0.3s;
 }
 
-#newJourney-save-Btn:hover {
+.newJourney-save-Btn:hover {
     background-color: #10B981;
 }
 

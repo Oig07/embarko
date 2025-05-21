@@ -37,9 +37,11 @@
                     <span class="close" id="closeModalBtn">&times;</span>
                 </div>
                 <!-- FORM CONTENT -->
-                 <form id="newJourney-Form" class="newJourney-Form">
-                    <label for="entry">Journey Name</label>
-                        <input type="text" id="journeyName" name="entry">
+                 <form name="newJourney_Form" id="newJourney-Form" class="newJourney-Form">
+                    <span class="entry-help">
+                        <label for="entry" class="entry-label">Journey Name</label><br>
+                        <textarea type="text" id="journeyName" class="journeyName" name="entry" placeholder="What are you trying to do for the first time?" maxlength="50"></textarea>
+                    </span>
                  </form>
                  <div class="smallDivPadding"></div>
                  <button type="submit" id="newJourney-save-Btn" class="newJourney-save-Btn">
