@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+    font: bold;
+    overflow-y: scroll;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: #444;
+    line-height: 1.9;
+    background-color: #FAFAFA;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Global Page Padding */
+.globalPadding {
+    padding: 0 24px 0 24px;
+}
+
+.smallDivPadding {
+    padding: 8px 0 8px 0;
+}
+
+.mediumDivPadding {
+    padding: 16px 0 16px 0;
+}
+
+.largeDivPadding {
+    padding: 24px 0 24px 0;
+}
+
+.smallSectionPadding {
+    padding: 40px 0 40px 0;
+}
+
+.mediumSectionPadding {
+    padding: 80px 0 80px 0;
+}
+
+.largeSectionPaddion {
+    padding: 120px 0 120px 0;
+}
+
+.xlargeSectionPadding {
+    padding: 160px 0 160px 0;
+}
+
+.xxlargeSectionPadding {
+    padding: 200px 0 200px 0;
+}
+
+.xxxlargeSectionPadding {
+    padding: 240px 0 240px 0;
+}
+
+/* --- SIDEBAR CONTAINER --- */
+.sidebar {
+    width: 200px;
+    border-radius: 8px;
+    background-color: #F87171;
+    height: 100%;
+    overflow: auto;
+    margin-top: 24px;
+    box-sizing: border-box;
+}
+
+/* --- SHARED STYLES for .sidebar a and .journeyCollapse --- */
+.sidebar a,
+.journeyCollapse {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    background: none;
+    border: none;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+/* --- Chevron styling --- */
+.chevron {
+    transition: transform 0.3s ease;
+    margin-left: 8px;
+}
+
+.journeyCollapse.active .chevron {
+    transform: rotate(180deg);
+}
+
+/* --- Hover styling --- */
+.journeyCollapse:hover,
+.sidebar a:hover {
+    color: #c43737;
+    height: 90%;
+}
+
+/* --- JOURNEYS CONTAINER --- */
+.journeys-container {
+    display: none;
+    background: linear-gradient(to bottom, #df6666, #c94545);
+    border-radius: 12px;
+    width: 95%;
+    margin: 0 auto;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.15);
+    /* Fix: removed space in rgba */
+    box-sizing: border-box;
+}
+
+.journeys-container a {
+    display: block;
+    padding: 12px 16px;
+    color: white;
+    text-decoration: none;
+}
+
+.journeys-container a:hover {
+    border-radius: 12px;
+    background-color: #c43737;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    color: white
+}
+
+/* PAGE CONTENT */
+div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+/* SCREEN RESIZING */
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar a {
+        float: left;
+    }
+
+    div.content {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+}
