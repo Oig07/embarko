@@ -232,7 +232,6 @@ body {
     flex-direction: column;
     max-width: 750px;
     width: 100%;
-    line-height: 8;
     padding: 8px;
     border: none;
     border-bottom: 1px solid black;
@@ -255,6 +254,12 @@ body {
 .entry-help {
     display: block;
     margin-top: -4px;
+}
+
+.characterCount {
+    font: inherit;
+    float: right;
+    font-weight: bold;
 }
 
 .newJourney-save-Btn {
