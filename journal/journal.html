@@ -15,42 +15,40 @@
             <div class="mainLayout">
         <div class="sidebarContainer" id="sidebarContainer">
             <div class="sidebar" id="sidebar">
-                <button class="startJourney-Btn" id="startJourney-Btn">Start New Journey</button>
+                <button class="startJourney-Btn" id="startJourneyBtn">Start New Journey</button>
                 <button class="journeyCollapse-Btn">Journeys <i class="fa-solid fa-chevron-down chevron"></i>
                 </button>
                 <div class="journeys-container">
-                    <a>Journey 1</a>
-                    <a>Journey 2</a>
-                    <a>Journey 3</a>
                 </div>
                 <a>Settings</a>
             </div>
         </div>
-        <!-- <div class="journal-iframe">
-            <iframe src="/journey/journey.html" title="journal 1"></iframe>
-        </div> -->
+        <div class="journal-iframe">
+            <iframe src=""></iframe>
         </div>
-        <div class="newJourney-Modal active" id="newJourney-Modal">
+        </div>
+        <div class="newJourney-Modal" id="newJourneyModal">
             <div class="modalContent" id="modalContent">
                 <div class="modalHeader">
-                    <h2>What Journey Are You Starting Today?</h2>
+                    <h2>Journey Name</h2>
                     <span class="close" id="closeModalBtn">&times;</span>
                 </div>
                 <!-- FORM CONTENT -->
                  <form name="newJourney_Form" id="newJourney-Form" class="newJourney-Form">
                     <span class="entry-help">
-                        <label for="entry" class="entry-label">Journey Name</label><br>
                         <input type="text" id="journeyName" class="journeyName" name="entry" placeholder="What are you trying to do for the first time?" maxlength="50"></input>
                         <span class="characterCount" id="characterCount"></span>
                     </span>
                  </form>
                  <div class="smallDivPadding"></div>
-                 <button type="submit" id="newJourney-save-Btn" class="newJourney-save-Btn">
+                 <button type="submit" id="newJourneySaveBtn" class="newJourney-Save-Btn">
                     Create Journal
                  </button>
             </div>
         </div>
         </div>
+        <script type="module" src="/config.js"></script>
         <script type="module" src="./main.js"></script>
+        <script type="module" src="./journalController.js"></script>
     </body>
 </html>

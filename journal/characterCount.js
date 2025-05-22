@@ -9,6 +9,6 @@ export function countChar(){
     textarea.addEventListener('input',()=>{
         const currentLength = textarea.value.length;
         const remaining = maxLength - currentLength;
-        charCountDisplay.textContent = `${currentLength}/${maxLength} (${remaining} remaining)`
+        charCountDisplay.textContent = `${currentLength}/${maxLength} characters remaining`
     })
 }

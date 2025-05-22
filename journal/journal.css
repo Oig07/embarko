@@ -141,6 +141,7 @@ body {
     padding: 12px 16px;
     color: white;
     text-decoration: none;
+    font-size: 12px;
 }
 
 .journeys-container a:hover {
@@ -156,7 +157,6 @@ body {
     background-color: #FAFAFA;
     padding: 24px 16px 0 16px;
     box-sizing: border-box;
-    overflow: hidden;
     align-self: flex-start;
     border-radius: 8px;
 }
@@ -246,11 +246,6 @@ body {
     border-bottom: 2px solid #F87171;
 }
 
-.entry-label {
-    font-weight: bold;
-    margin-top: -60px;
-}
-
 .entry-help {
     display: block;
     margin-top: -4px;
@@ -259,10 +254,12 @@ body {
 .characterCount {
     font: inherit;
     float: right;
-    font-weight: bold;
+    font-weight: light;
+    font-size: 12px;
+    color: #94a3b8;
 }
 
-.newJourney-save-Btn {
+.newJourney-Save-Btn {
     background-color: #34D399;
     border: none;
     border-radius: 8px;
@@ -274,7 +271,7 @@ body {
     transition: 0.3s;
 }
 
-.newJourney-save-Btn:hover {
+.newJourney-Save-Btn:hover {
     background-color: #10B981;
 }
 

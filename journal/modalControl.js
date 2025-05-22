@@ -1,5 +1,4 @@
-"use strict";
-
+"use strict"
 // Initializes modal behavior based on provided element IDs
 export function initModal({ modalId, openBtnId, closeBtnId, submitBtnId }) {
   // Get references to modal and its control buttons
@@ -39,7 +38,7 @@ export function initModal({ modalId, openBtnId, closeBtnId, submitBtnId }) {
     }
   });
 
-  // Attach click listener to submit button if it exists
+    // Attach click listener to submit button if it exists
   if (submitBtn) {
     submitBtn.addEventListener("click", () => {
       modal.classList.remove("active");
