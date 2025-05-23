@@ -74,7 +74,7 @@ body {
 .startJourney {
     background-color: #e05d5b;
     border: none;
-    border-radius: 16px;
+    border-radius: 8px;
     color: white;
     cursor: pointer;
     font-size: 28px;

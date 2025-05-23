@@ -2,6 +2,7 @@
 
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 import { SUPABASE_URL, SUPABASE_KEY } from '/config.js';
+import { initLogout } from '../logout.js';
 import { sidebarCollapse } from "./sidebarCollapse.js";
 import { countChar } from "./characterCount.js";
 import { initializeJourneyCreation } from "./journeyEntryElement.js";
@@ -16,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
   sidebarCollapse();
   countChar();
 });
+
+initLogout();
 
 document.addEventListener("DOMContentLoaded", async () => {
   const journalContainer = document.querySelector('.journeys-container');
