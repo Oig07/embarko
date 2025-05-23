@@ -70,24 +70,43 @@ body {
 
 /* --- SIDEBAR CONTAINER --- */
 
+/* --- SIDEBAR HEADER --- */
+.sidebar-header {
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 1000;
+    text-transform: uppercase;
+    color: #e6cdb9;
+    /* Light beige */
+    letter-spacing: 1px;
+    background-color: transparent;
+    border-bottom: 2.5px solid rgba(244, 240, 233, 0.2);
+    /* Very light line */
+    margin-bottom: 4px;
+}
+
+/* --- REST OF SIDEBAR --- */
+
 .sidebarContainer {
     width: 200px;
-    background-color: #F87171;
+    background-color: #e05d5b;
     padding: 0;
     box-sizing: border-box;
     border-radius: 8px;
     margin-top: 24px;
+    box-shadow: 0 4px 12px rgba(40, 64, 65, 0.2);
+    background: linear-gradient(to bottom, #e05d5b, #dc8577);
 }
 
 .sidebar {
     width: 200px;
     border-radius: 8px;
-    background-color: #F87171;
+    background-color: #e05d5b;
     overflow: auto;
     box-sizing: border-box;
 }
 
-/* --- SHARED STYLES for .sidebar a and .journeyCollapse --- */
+/* --- SHARED STYLES FOR .sidebar a AND .journeyCollapse --- */
 .sidebar a,
 .journeyCollapse-Btn,
 .startJourney-Btn {
@@ -96,10 +115,12 @@ body {
     align-items: center;
     width: 100%;
     padding: 16px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
+    font: inherit;
+    font-weight: 400;
     font-size: 16px;
     color: white;
+    letter-spacing: 0.3px;
+    padding: 14px 18px;
     background: none;
     border: none;
     text-align: left;
@@ -108,7 +129,7 @@ body {
     box-sizing: border-box;
 }
 
-/* --- Chevron styling --- */
+/* --- CHEVRON --- */
 .chevron {
     transition: transform 0.3s ease;
     margin-left: 8px;
@@ -118,11 +139,15 @@ body {
     transform: rotate(180deg);
 }
 
-/* --- Hover styling --- */
+/* --- HOVER STYLING --- */
 .startJourney-Btn:hover,
 .journeyCollapse-Btn:hover,
 .sidebar a:hover {
-    color: #c43737;
+    background-color: #e67371;
+    /* Slightly lighter than base red */
+    color: #ffffff;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    border-radius: 8px;
 }
 
 /* --- JOURNEYS CONTAINER --- */
@@ -260,7 +285,7 @@ body {
 }
 
 .newJourney-Save-Btn {
-    background-color: #34D399;
+    background-color: #e05d5b;
     border: none;
     border-radius: 8px;
     color: white;
@@ -272,8 +297,44 @@ body {
 }
 
 .newJourney-Save-Btn:hover {
-    background-color: #10B981;
+    background-color: #e67371;
+    /* Slightly lighter than base red */
+    color: #ffffff;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    border-radius: 8px;
 }
+
+/* NEW USER WELCOME */
+.newUser-Card {
+    background-color: #fdfdfd;
+    border: 1px solid #ddd;
+    padding: 160px 400px 160px 400px;
+    text-align: center;
+    margin-top: 248px;
+    margin-left: 196px;
+    border-radius: 8px;
+    font: inherit;
+}
+
+.createFirst-journal {
+    background-color: #e05d5b;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.createFirst-journal:hover {
+    background-color: #e67371;
+    /* Slightly lighter than base red */
+    color: #ffffff;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    border-radius: 8px;
+}
+
 
 /* SCREEN RESIZING */
 

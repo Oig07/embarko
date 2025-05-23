@@ -7,6 +7,7 @@ import { countChar } from "./characterCount.js";
 import { initializeJourneyCreation } from "./journeyEntryElement.js";
 import { fetchJournalsForUser, saveJournal } from "./journalSupabase.js";
 import { renderJournalLink } from "./renderUtils.js";
+import { showNewUserWelcome } from './newUserWelcome.js';
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
 
@@ -17,9 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const container = document.querySelector('.journeys-container');
+  const journalContainer = document.querySelector('.journeys-container');
+  const welcomeContainer = document.querySelector('.welcomeJournal-Container');
 
-  if (!container) {
+  console.log('WelcomeContainer is:', welcomeContainer);
+
+  if(!welcomeContainer){
+    console.warn('missing .welcome-container in DOM');
+    return
+  }
+
+  if (!journalContainer) {
     console.warn("main.js: .journeys-container not found");
     return;
   }
@@ -37,9 +46,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const journals = await fetchJournalsForUser(user.id);
 
-  journals.forEach(journal => {
-    renderJournalLink(journal.journal_name, container, journal.id);
+  if (journals.length === 0){
+    showNewUserWelcome(welcomeContainer);
+  } else {
+    journals.forEach(journal => {
+    renderJournalLink(journal.journal_name, journalContainer, journal.id);
   });
+  }
 
   initializeJourneyCreation(async (journalName) => {
     const { data, error } = await saveJournal(journalName, user.id);
