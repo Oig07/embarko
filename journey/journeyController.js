@@ -10,7 +10,6 @@ function waitForElement(id, callback) {
 }
 
 waitForElement("startJourney", () => {
-  console.log("startJourney now exists. Initializing modal...");
   initModal({
     modalId: "newEntryModal",
     openBtnId: "startJourney",

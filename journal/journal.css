@@ -8,6 +8,7 @@ html {
     box-sizing: border-box;
     font: bold;
     overflow-y: scroll;
+    scrollbar-gutter: stable;
 }
 
 body {
@@ -68,21 +69,24 @@ body::-webkit-scrollbar {
 /* BACKGROUND */
 .backgroundSVG {
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     z-index: -1;
     /* Ensure it's behind all content */
     opacity: 0.7;
     /* Soft and subtle */
     pointer-events: none;
     /* Prevent interaction blocking */
+    overflow: hidden;
 }
 
 .backgroundSVG img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
+    object-fit: cover;
 }
 
 /* LOG OUT BUTTON */
@@ -150,7 +154,7 @@ body::-webkit-scrollbar {
     padding: 0;
     box-sizing: border-box;
     border-radius: 8px;
-    margin-top: 24px;
+    margin-top: 0px;
     box-shadow: 0 4px 12px rgba(40, 64, 65, 0.2);
 }
 

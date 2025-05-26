@@ -91,7 +91,7 @@ body::-webkit-scrollbar {
 }
 
 .startJourneyPadding {
-    padding: 80px 0 80px 0;
+    padding: 24px 0 24px 0;
 }
 
 .startJourney {
@@ -284,7 +284,7 @@ body::-webkit-scrollbar {
     cursor: pointer;
 }
 
-#entry {
+.entry {
     border-radius: 8px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -293,6 +293,11 @@ body::-webkit-scrollbar {
     max-width: 750px;
     padding: 24px;
     width: 100%;
+    font: inherit;
+}
+
+.entry:focus {
+    outline-color: #e05d5b;
 }
 
 .newEntry-save-button {
@@ -307,7 +312,7 @@ body::-webkit-scrollbar {
     transition: 0.3s;
 }
 
-#newEntry-save-button:hover {
+.newEntry-save-button:hover {
     background-color: #e67371;
     /* Slightly lighter than base red */
     color: #ffffff;

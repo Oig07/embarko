@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+    font: bold;
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: #444;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Global Page Padding */
+.globalPadding {
+    padding: 0 24px 0 24px;
+}
+
+.smallDivPadding {
+    padding: 8px 0 8px 0;
+}
+
+.mediumDivPadding {
+    padding: 16px 0 16px 0;
+}
+
+.largeDivPadding {
+    padding: 24px 0 24px 0;
+}
+
+.smallSectionPadding {
+    padding: 40px 0 40px 0;
+}
+
+.mediumSectionPadding {
+    padding: 80px 0 80px 0;
+}
+
+.largeSectionPaddion {
+    padding: 120px 0 120px 0;
+}
+
+.xlargeSectionPadding {
+    padding: 160px 0 160px 0;
+}
+
+.xxlargeSectionPadding {
+    padding: 200px 0 200px 0;
+}
+
+.xxxlargeSectionPadding {
+    padding: 240px 0 240px 0;
+}
+
+/* BACKGROUND */
+.backgroundSVG {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    /* Ensure it's behind all content */
+    opacity: 0.7;
+    /* Soft and subtle */
+    pointer-events: none;
+    /* Prevent interaction blocking */
+    overflow: hidden;
+}
+
+.backgroundSVG img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* LOG OUT BUTTON */
+.logOut-Btn {
+    display: flex;
+    float: right;
+    margin-top: 24px;
+    margin-right: 36px;
+    padding: 12px 24px 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #e05d5b;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(40, 64, 65, 0.2);
+    font: inherit;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    align-items: center;
+}
+
+.logOut-Btn:hover {
+    background-color: #e67371;
+    /* Slightly lighter than base red */
+    color: #ffffff;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    border-radius: 8px;
+}
+
+.logOut-Btn i {
+    margin-left: 8px;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+/* --- MAIN LAYOUT */
+.mainLayout {
+    display: flex;
+    overflow: hidden;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* --- SIDEBAR HEADER --- */
+.sidebar-header {
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 1000;
+    text-transform: uppercase;
+    color: #e6cdb9;
+    /* Light beige */
+    letter-spacing: 1px;
+    background-color: transparent;
+    border-bottom: 2.5px solid rgba(244, 240, 233, 0.2);
+    /* Very light line */
+    margin-bottom: 4px;
+}
+
+/* --- REST OF SIDEBAR --- */
+
+.sidebarContainer {
+    width: 200px;
+    background-color: #e05d5b;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin-top: 0px;
+    box-shadow: 0 4px 12px rgba(40, 64, 65, 0.2);
+}
+
+.sidebar {
+    width: 200px;
+    border-radius: 8px;
+    background-color: #e05d5b;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+/* --- SHARED STYLES FOR .sidebar a AND .journeyCollapse --- */
+.sidebar a,
+.journeyCollapse-Btn,
+.startJourney-Btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+    font: inherit;
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+    letter-spacing: 0.3px;
+    padding: 14px 18px;
+    background: none;
+    border: none;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+/* --- CHEVRON --- */
+.chevron {
+    transition: transform 0.3s ease;
+    margin-left: 8px;
+}
+
+.journeyCollapse-Btn.active .chevron {
+    transform: rotate(180deg);
+}
+
+/* --- HOVER STYLING --- */
+.startJourney-Btn:hover,
+.journeyCollapse-Btn:hover,
+.sidebar a:hover {
+    background-color: #e67371;
+    /* Slightly lighter than base red */
+    color: #ffffff;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    border-radius: 8px;
+}

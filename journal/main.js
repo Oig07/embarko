@@ -1,9 +1,8 @@
 "use strict"
 
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-import { SUPABASE_URL, SUPABASE_KEY } from '/config.js';
-import { initLogout } from '../logout.js';
-import { sidebarCollapse } from "./sidebarCollapse.js";
+import { SUPABASE_URL, SUPABASE_KEY } from '/config.js'
+import { initLayout } from '../componenets/initLayout.js';
 import { countChar } from "./characterCount.js";
 import { initializeJourneyCreation } from "./journeyEntryElement.js";
 import { fetchJournalsForUser, saveJournal } from "./journalSupabase.js";
@@ -14,17 +13,13 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
 
 // Initialize collapsible sidebar and character counter
 document.addEventListener('DOMContentLoaded', () => {
-  sidebarCollapse();
+  initLayout();
   countChar();
 });
-
-initLogout();
 
 document.addEventListener("DOMContentLoaded", async () => {
   const journalContainer = document.querySelector('.journeys-container');
   const welcomeContainer = document.querySelector('.welcomeJournal-Container');
-
-  console.log('WelcomeContainer is:', welcomeContainer);
 
   if(!welcomeContainer){
     console.warn('missing .welcome-container in DOM');
