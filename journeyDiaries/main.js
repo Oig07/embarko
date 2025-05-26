@@ -1,5 +1,3 @@
-"use strict"
-
 import { supabase } from '../supabase.js';
 import { initLayout } from '../components/initLayout.js';
 import { countChar } from "./characterCount.js";
