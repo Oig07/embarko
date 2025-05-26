@@ -6,7 +6,7 @@
 
 # === LOCAL CONFIG FILES (e.g., keys not meant for Git) ===
 config.js
-journey/journalEntry/config.js
+supabase.js
 
 # === DEPENDENCIES ===
 node_modules/

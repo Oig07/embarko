@@ -1,22 +1,22 @@
 "use strict";
 
-import {createClient} from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
-import { SUPABASE_URL, SUPABASE_KEY } from '/config.js';
-
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
+import { supabase } from "../supabase.js";
 
 
-export async function saveJournal(journal_name){
+export async function saveJournal(journal_name, user_id) {
   const { data, error } = await supabase
     .from('journals')
-    .insert([{ journal_name }])
-    .select(); // includes the generated id
+    console.log('saving journal:', journal_name, "for user:", user_id)
+    .insert([{ journal_name, user_id }])
+    .select();
 
   if (error) {
     console.error('Supabase insert error: ', error);
+  } else {
+    console.log('journal saved:', data)
   }
 
-  return { data, error }; // data[0].id contains the journal ID
+  return { data, error };
 }
 
 export async function fetchJournalsForUser(user_id) {

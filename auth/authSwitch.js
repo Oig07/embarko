@@ -1,7 +1,5 @@
 "use strict";
 
-// authSwitch.js
-
 export function initAuthSwitch({
     loginButtonSelector,
     signUpButtonSelector,

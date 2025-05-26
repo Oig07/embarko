@@ -1,9 +1,6 @@
 "use strict";
 // Import Supabase client
-import {createClient} from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
-import { SUPABASE_URL, SUPABASE_KEY } from '/config.js';
-
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
+import { supabase } from "../../supabase.js";
 
 
 export async function saveJournalEntry(content, journalId){
