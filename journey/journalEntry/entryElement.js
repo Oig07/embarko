@@ -20,7 +20,7 @@ export function createEntryElement(entry, entryCount) {
   button.style.color = "#333";
 
   const content = document.createElement("div");
-  content.className = "collapsibleContent";
+  content.className = "collapsibleContent entry-content collapsed";
 
   const paragraph = document.createElement("p");
   paragraph.textContent = entry.content || "Nothing Added";

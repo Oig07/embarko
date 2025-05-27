@@ -2,7 +2,7 @@
 // Import Supabase Functionality for persistence
 import { saveJournalEntry, fetchJournalEntries } from "./entrySupabase.js"
 import { createEntryElement } from "./entryElement.js";
-import { initCollapsibles } from "./collapsibleBehavior.js";
+import { initCollapsibles } from "../../components/utils/collapseToggle.js";
 
 
 // Track Day Count
@@ -35,7 +35,11 @@ window.addEventListener("DOMContentLoaded", async () => {
   // ✅ Fetch entries for the correct journal
   const entries = await fetchJournalEntries(journalId);
   entries.forEach((entry) => renderNewEntry(entry));
-  initCollapsibles();
+  initCollapsibles({
+    buttonClass: 'collapsibleEntry',
+    activeButtonClass: 'active',
+    animate: true,
+  });
 
   const newEntryBtn = document.getElementById("newEntry-save-button");
   newEntryBtn.addEventListener("click", async function (e) {

@@ -146,7 +146,7 @@ body::-webkit-scrollbar {
     font-weight: 600;
 }
 
-/* Journey Entry Container */
+/* JOURNEY ENTRY CONTAINER */
 .entryPadding {
     padding: 8px 384px
 }
@@ -220,11 +220,12 @@ body::-webkit-scrollbar {
     /* Visible text */
 }
 
-/* Optional extra padding when open */
-.collapsibleEntry.active+.collapsibleContent {
-    padding: 12px 16px;
+.collapsibleContent.expanded {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    opacity: 1;
+    border: 1px solid #f0d0c0;
 }
-
 
 /* NEW ENTRY MODAL*/
 .newEntryModal {

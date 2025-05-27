@@ -1,6 +1,6 @@
 "use strict";
 // Import function to create new entry elements and modal control logic
-import { initModal } from "./journalEntry/modalControl.js";
+import { initModal } from '../components/modal/modalController.js'
 
 // Wait for the startJourney button to appear in the DOM before initializing modal
 function waitForElement(id, callback) {

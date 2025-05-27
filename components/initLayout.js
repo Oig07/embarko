@@ -1,6 +1,6 @@
 "use strict"
 
-import { sidebarCollapse } from './sidebar/sidebarCollapse.js';
+import { initCollapsibles } from './utils/collapseToggle.js';
 import { initLogout } from './logout/logout.js';
 
 export function initLayout(callback) {
@@ -20,7 +20,11 @@ export function initLayout(callback) {
       const sidebarContainer = document.getElementById('sidebarContainer');
       if (sidebarContainer) {
         sidebarContainer.innerHTML = html;
-        sidebarCollapse(); // Initialize toggle
+        initCollapsibles({
+          buttonClass: 'journeyCollapse-Btn',
+          activeButtonClass: 'active',
+          animate: false,
+        }); // Initialize toggle
         checkAllLoaded();
       } else {
         console.warn("Sidebar container not found");
