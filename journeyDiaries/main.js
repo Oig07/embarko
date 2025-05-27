@@ -1,61 +1,31 @@
-import { supabase } from '../supabase.js';
-import { initLayout } from '../components/initLayout.js';
-import { countChar } from "./characterCount.js";
-import { initializeJourneyCreation } from "./journeyEntryElement.js";
-import { fetchJournalsForUser, saveJournal } from "./journalSupabase.js";
-import { renderJournalLink } from "./renderUtils.js";
-import { showNewUserWelcome } from './newUserWelcome.js';
+"use strict";
 
-// Initialize collapsible sidebar and character counter
-document.addEventListener('DOMContentLoaded', () => {
-  countChar();
-});
+import { supabase } from '../supabase.js'
+import { initLayout } from '../components/initLayout.js'
+import { initLogout } from '../components/logout/logout.js';
+import { fetchJournalsForUser } from '../journal/journalSupabase.js';
+import { renderJournalLink } from '../journal/renderUtils.js';
+import { initModal } from '../components/modal/modalController.js';
 
-initLayout(() => {
-  // Wait until .journeys-container is available (injected from sidebar)
-  function waitForElement(selector, callback) {
-    const el = document.querySelector(selector);
-    if (el) return callback(el);
-    setTimeout(() => waitForElement(selector, callback), 100);
-  }
+initLayout()
 
-    waitForElement('.journeys-container', async (journalContainer) => {
-      const welcomeContainer = document.querySelector('.welcomeJournal-Container');
+// START NEW JOURNEY MODAL
+// Wait for the "Start New Journey" button to appear in the DOM before initializing modal
+function waitForElement(id, callback) {
+  const el = document.getElementById(id);
+  if (el) return callback(el);
+  setTimeout(() => waitForElement(id, callback), 100);
+}
 
-      if (!welcomeContainer) {
-        console.warn('Missing .welcomeJournal-Container in DOM');
-        return;
-      }
-
-      const {
-        data: { user },
-        error: authError
-      } = await supabase.auth.getUser();
-
-      if (authError || !user) {
-        console.error("User not logged in or error occurred", authError);
-        window.location.href = "/auth/auth.html";
-        return;
-      }
-
-      const journals = await fetchJournalsForUser(user.id);
-
-      if (journals.length === 0) {
-        showNewUserWelcome(welcomeContainer);
-      } else {
-        journals.forEach(journal => {
-          renderJournalLink(journal.journal_name, journalContainer, journal.id);
-        });
-      }
-
-      // Wait for the modal save button before initializing creation handler
-      waitForElement('#newJourneySaveBtn', () => {
-        initializeJourneyCreation(async (journalName) => {
-          const { data, error } = await saveJournal(journalName, user.id);
-          if (data && data.length > 0) {
-            renderJournalLink(data[0].journal_name, journalContainer, data[0].id);
-          }
-        });
-      });
-    });
+waitForElement("startJourneyBtn", () => {
+  initModal({
+    modalId: "newJourneyModal",
+    openBtnId: "startJourneyBtn",
+    closeBtnId: "closeModalBtn",
+    submitBtnId: "newJourneySaveBtn",
+    onSubmit: () => {
+      console.log('Form submitted')
+      // Add Logic for post submission
+    }
   });
+});

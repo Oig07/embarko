@@ -209,3 +209,113 @@ body::-webkit-scrollbar {
     transition: background-color 0.2s ease, transform 0.2s ease;
     border-radius: 8px;
 }
+
+/* NEW JOURNEY MODAL */
+.newJourney-Modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.newJourney-Modal.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modalContent {
+    padding: 24px;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom right, #f4f0e9, #ffffff);
+    border: 1px solid #e6cdb9;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* optional spacing */
+}
+
+.modalHeader h2 {
+    font-size: 1.25rem;
+    margin-top: -24px;
+}
+
+.modalHeader .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.journeyName {
+    display: flex;
+    flex-direction: column;
+    max-width: 750px;
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    background: transparent;
+    font: "lato", sans-serif;
+    font-size: 16px;
+    resize: none;
+}
+
+.journeyName:focus {
+    border-bottom: 2px solid #F87171;
+}
+
+.entry-help {
+    display: block;
+    margin-top: -4px;
+}
+
+.characterCount {
+    font: inherit;
+    float: right;
+    font-weight: light;
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.newJourney-Save-Btn {
+    background-color: #e05d5b;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px 8px 4px 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.newJourney-Save-Btn:hover {
+    background-color: #e67371;
+    /* Slightly lighter than base red */
+    color: #ffffff;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    border-radius: 8px;
+}

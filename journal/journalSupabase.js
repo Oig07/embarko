@@ -6,7 +6,6 @@ import { supabase } from "../supabase.js";
 export async function saveJournal(journal_name, user_id) {
   const { data, error } = await supabase
     .from('journals')
-    console.log('saving journal:', journal_name, "for user:", user_id)
     .insert([{ journal_name, user_id }])
     .select();
 
@@ -24,7 +23,8 @@ export async function fetchJournalsForUser(user_id) {
     .from('journals')
     .select('*')
     .eq('user_id', user_id)
-    .order('created_at', { ascending: false });
+    .order('created_at', { ascending: false })
+    .limit(5);
 
   if (error) {
     console.error("Error fetching journals:", error);
